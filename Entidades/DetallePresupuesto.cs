@@ -8,13 +8,23 @@ namespace CarpinteriaJG.Entidades
 {
     internal class DetallePresupuesto
     {
-        public Producto Producto { get; set; }
-        public int cantidad { get; set; }
+        private Producto producto;
+        private int cantidad;
+
+        public Producto Producto { get { return producto; } set { producto = value; } }
+        public int Cantidad { get { return cantidad; } set {cantidad = value; } }
+
+
 
         public DetallePresupuesto(Producto prod, int cantidad)
         {
-            this.Producto = prod;
+            this.producto = prod;
             this.cantidad = cantidad;
+        }
+
+        public double CalcularSubTotal()
+        {
+            return producto.Precio * cantidad;
         }
     }
 }
