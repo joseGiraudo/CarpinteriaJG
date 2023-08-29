@@ -16,7 +16,7 @@ namespace CarpinteriaJG.Entidades
         private List<DetallePresupuesto> detalles;
         private double total;
 
-        public int NroPresupuesto { get => idPresupuesto; set => idPresupuesto = value; }
+        public int NroPresupuesto { get => nroPresupuesto; set => nroPresupuesto = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public string Cliente { get => cliente; set => cliente = value; }
         public double Descuento { get => descuento; set => descuento = value; }
@@ -31,7 +31,7 @@ namespace CarpinteriaJG.Entidades
             this.Descuento = 0;
             this.FechaBaja = DateTime.Now;
             this.Total = 0;
-            detalles = new List<Detalles>();
+            detalles = new List<DetallePresupuesto>();
         }
 
         public Presupuesto(int nroPresupuesto, DateTime fecha, string cliente, double descuento, DateTime fechaBaja, double total)
@@ -46,7 +46,7 @@ namespace CarpinteriaJG.Entidades
 
 
 
-         public void AgregarDetalle(Detalles detalle)
+         public void AgregarDetalle(DetallePresupuesto detalle)
         {
             detalles.Add(detalle);
         }

@@ -126,7 +126,7 @@ namespace CarpinteriaJG.Presentacion
             dgvDetalle.Rows.Add(new object[] { detalle.Producto.NroProducto, 
                                                detalle.Producto.Nombre, 
                                                detalle.Producto.Precio, 
-                                               detalle.cantidad,
+                                               detalle.Cantidad,
                                                "Quitar" });
 
             CalcularTotales();
@@ -135,7 +135,7 @@ namespace CarpinteriaJG.Presentacion
         }
         private void CalcularTotales()
         {
-            txtSubTotal.Text = nuevoPresupuesto.CalcularTotales().ToString();
+            txtSubTotal.Text = nuevoPresupuesto.CalcularTotal().ToString();
             if( !string.IsNullOrEmpty(txtDescuento.Text) && int.TryParse(txtDescuento.Text, out _))
             {
                 double desc = nuevoPresupuesto.CalcularTotal() * Convert.ToDouble(txtDescuento.Text) / 100;

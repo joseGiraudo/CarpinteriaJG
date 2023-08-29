@@ -17,7 +17,8 @@ namespace CarpinteriaJG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmNuevoPresupuesto());
+            //Application.Run(new FrmNuevoPresupuesto());
+            Application.Run(new Form1());
         }
     }
 }
